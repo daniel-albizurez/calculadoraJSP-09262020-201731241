@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body style="text-align: center" >
+        <h1>Bienvenid@ ingrese dos numeros</h1>
+        <form action="Calculadora.jsp" method="POST">
+            <div>
+                <label style="float: left; width: 50%" for="number1"> Primer numero:</label>
+                <input type="number" id="number1" name="1"> 
+                <br>
+                <label style="float: left; width: 50%" for="number2"> Segundo numero:</label>
+                <input type="number" id="number2" name="2"> 
+                <br>
+            </div>
+            <br> 
+            <div>
+                <label for="add">Sumar(+)</label>
+                <input type="checkbox" id="add" name="add" value="true">
+
+                <label for="sub">Restar(-)</label>
+                <input type="checkbox" id="sub" name="substract" value="true">
+               
+                <label for="mult">Multiplicar(*)</label>
+                <input type="checkbox" id="mult" name="multiply" value="true">
+
+                <label for="divide">Dividir(/)</label>
+                <input type="checkbox" id="divide" name="divide" value="true">
+                
+            </div>
+            <br>
+            <input style=" width: 50%"  type="submit" value="Operar">
+            <br>
+            <input style=" width: 50%" type="reset" value="Limpiar">
+        </form>
+    </body>
+</html>
