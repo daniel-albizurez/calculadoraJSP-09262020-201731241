@@ -16,7 +16,7 @@
         <a href="index.html"> Regresar </a>
         <%! double number1, number2;
             Calculadora calculadora;
-            String add, sub, mult, div;
+            String add, sub, mult, div, higher, pow, bin;
         %>
         <div style="text-align: center">
         <h1>Los resultados son</h1>
@@ -40,6 +40,14 @@
             div = (request.getParameter("divide") != null)?
                     request.getParameter("divide") : "false";
             
+            higher = (request.getParameter("higher") != null)?
+                    request.getParameter("higher") : "false";
+                    
+            pow = (request.getParameter("power") != null)?
+                    request.getParameter("power") : "false";
+                    
+            bin = (request.getParameter("binary") != null)?
+                    request.getParameter("binary") : "false";
             if (add.equals("true")) { %>
                 <h3>
                     <%=number1 + " + " + number2 + "= "%>
@@ -62,6 +70,28 @@
                 <h3>
                     <%=number1 + " / " + number2 + "= "%>
                     <%=calculadora.divide(number1, number2)%>
+                </h3>
+     <%        }
+            if (higher.equals("true")) {%>
+                <h3>
+                    <%="Entre " + number1 + " y " + number2 + " el  mayor es: "%>
+                    <%=calculadora.higher(number1, number2)%>
+                </h3>
+<%        }
+            if (pow.equals("true")) {%>
+                <h3>
+                    <%=number1 + " ^ " + number2 + "= "%>
+                    <%=calculadora.power(number1, number2)%>
+                </h3>
+<%        }
+            if (bin.equals("true")) {%>
+                <h3>
+                    <%=number1 + " en binario: "%>
+                    <%=calculadora.binary(number1)%>
+                </h3>
+                <h3>
+                    <%=number2 + " en binario: "%>
+                    <%=calculadora.binary(number2)%>
                 </h3>
         <%        }
         %>
